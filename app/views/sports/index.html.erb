@@ -1,0 +1,53 @@
+<style type="text/css">
+  li a {
+    display: block; color: #bbb; padding: 8px 0 8px 16px;
+  }
+
+  ul{
+    margin: 0; padding: 0; width: 200px; background-color: #222;
+  }
+
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  .caption{
+    box-shadow: 10px 10px  #888888; border-radius: 150px; text-align: center;
+  }
+
+  .new{
+    margin-top:10%; text-align: center; 
+  }
+</style>
+
+<div style="overflow:auto; overflow-y:hidden;">
+  <% @sports.each do |sport| %>
+   <div class="col-md-4">
+     <div class="thumbnail" style="border:none ">
+      <%= link_to sport do%>
+        <div class="caption">
+          <h3>
+            <%= sport.name %>
+          </h3>
+          <%= image_tag("foot.png", :alt => "foot") %>
+          <p>
+            <b>Description : </b>
+            <%= sport.description %>
+          </p>
+          <div style="display:inline; ">
+               
+              <%= button_to "Edit", edit_sport_path(sport), :class => "btn btn-warning", :method => :get%>
+              <%= button_to "Destroy", sport, :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' }%>
+          </div>
+        </div>
+      <% end %>
+      </div>
+   </div>
+  <% end %>
+</div>
+
+<div class="">
+    
+</div>

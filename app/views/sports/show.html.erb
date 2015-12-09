@@ -1,0 +1,32 @@
+ 
+<style type="text/css">
+.caption{
+    box-shadow: 10px 10px  #888888; border-radius: 150px; text-align: center;
+  }
+</style>
+
+<div class="thumbnail" style="border:none; width:80%;">
+        <div class="caption">
+          <h3>
+            <%= @sport.name %>
+          </h3>
+          <%= image_tag("foot.png", :alt => "foot") %>
+          <p>
+            <b>Description : </b>
+            <%= @sport.description %>
+          </p>
+          <b>Création : </b>
+            <%= @sport.created_at %>
+          </p>
+          <p>
+            <b>Identifiant : </b>
+            <%= @sport.id %>
+          </p>
+          <div style="display:inline; ">
+               
+              <%= button_to "Edit", edit_sport_path(@sport), :class => "btn btn-warning", :method => :get%>
+              <%= button_to "Back", sports_path, :class => "btn btn-danger", :method => :get%>
+          </div>
+        </div>
+</div>
+ <p id="notice"><%= notice %></p>
