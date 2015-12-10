@@ -1,16 +1,32 @@
-<p id="notice"><%= notice %></p>
+<style type="text/css">
+.caption{
+    box-shadow: 10px 10px  #888888; border-radius: 150px; text-align: center;
+  }
+</style>
 
-<div class="thumbnail">
-
-  	<h2>Name : <%= @equipement.name %></h2>
-  	<!--<img src="..." alt="..."> -->
-  	<div class="caption">
-	 	<p>Description: <%= @equipement.description %></p>
-		<p>Sport: <%= @equipement.sport.name %></p> 		
-
-		<%= link_to 'Edit', edit_equipement_path(@equipement) %> |
-		<%= link_to 'Back', equipements_path %>
-	</div>
-
+<div class="thumbnail" style="border:none; width:80%; margin-left:25%">
+        <div class="caption">
+          <h3>
+            <%= @equipement.name %>
+          </h3>
+          <%= image_tag("foot.png", :alt => "foot") %>
+          <p>
+            <b>Description : </b>
+            <%= @equipement.description %>
+          </p>
+          <b>Création : </b>
+            <%= @equipement.created_at %>
+          </p>
+          <p>
+            <b>Identifiant : </b>
+            <%= @equipement.id %>
+          </p>
+          <div style="display:inline; ">
+               
+              <%= button_to "Edit", edit_equipement_path(@equipement), :class => "btn btn-warning", :method => :get%>
+              <%= button_to "Back", equipements_path, :class => "btn btn-danger", :method => :get%>
+          </div>
+        </div>
 </div>
  
+ <p id="notice"><%= notice %></p>

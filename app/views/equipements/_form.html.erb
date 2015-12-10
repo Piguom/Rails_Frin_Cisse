@@ -24,7 +24,7 @@
     
     <%= f.select :sport_id , Sport.all.map{|sport| [sport.name,sport.id]} %>
   </div>
-  <div class="actions btn btn-default">
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

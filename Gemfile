@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 gem 'sass'
 gem 'materialize-sass'
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'devise'

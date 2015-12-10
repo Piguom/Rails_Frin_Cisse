@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <style type="text/css">
 
-  h1,h5 {
+  h1,h5 { 
   	color:white;
   	text-align: center;
   }
@@ -47,12 +47,21 @@
   .form-horizontal{
     width : 90%;  margin-left:5%;
   } 
+
+  .add_sport{
+    margin-top: 2%;
+    margin-right:15%;
+    float:right;
+    text-align: right;
+  }
 </style>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<!-- 
 <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+       <p class="alert"><%= alert %></p> -->
 
 <nav class="navbar navbar-inverse" style="margin-top:0;">
 	<%= image_tag("sports.png", :alt => "sports", :style => "left:0;")%>
@@ -60,18 +69,21 @@
 </nav> 
 
 <div>
-	<div style="background-color:#333; height:100%; float:left; box-shadow: 10px 10px  #888888; ">
+	<div class="container-fluid" style="background-color:#333; height:100%; display:inline-block; float:left; box-shadow: 10px 10px  #888888; ">
   <h1>StoreSport</h1>
 
 	<hr />
   <div class="nav" style="margin-top:5%">
+      <div class="add_sport">
+        <%= button_to '+', new_sport_path  , :class => "btn btn-success",:style => "border-radius:20px;",:method => :get%> 
+        <%= button_to '+', new_equipement_path , :class => "btn btn-success",:style => "border-radius:20px;",:method => :get%>
+      </div>
       <ul> 
         <li>
-            <%= link_to "Sport", "/sports"%>            
+            <%= link_to "Sport", "/sports"%>
         </li>
         <li>
           <%= link_to "Equipements", "/equipements"%>
-          <%= button_to '+', new_equipement_path , :class => "btn btn-success",:style => "display:inline; border-radius:20px;",:method => :get%>
         </li>
       </ul>
   </div>
@@ -95,7 +107,9 @@
 </form>
 
 </div>
+<div style="display:inline-block">
 	<%= yield %>
+</div>
 </div>
 
 

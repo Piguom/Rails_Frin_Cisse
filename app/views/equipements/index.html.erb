@@ -1,34 +1,56 @@
- 
-<div class="page-header">
-  <h1 class="text-center">Listing equipements</h1>
-</div>
+<style type="text/css">
+  li a {
+    display: block; color: #bbb; padding: 8px 0 8px 16px;
+  }
 
+  ul{
+    margin: 0; padding: 0; width: 200px; background-color: #222;
+  }
 
-<div class="row">
-  <% @equipements.each do |equipement| %>
-   <div class="col-sm-6 col-md-4">
-     <div class="thumbnail">
-       <!-- <img src="..." alt="..."> -->
-        <div class="caption">
-          <h3><%= equipement.name %></h3>
-          <p><%= equipement.description %></p>
-          <p>
-            <a href="#" class="btn btn-primary" role="button">
-              <%= link_to 'Show', equipement %>
-            </a> 
-            <a href="#" class="btn btn-default" role="button">
-              <%= link_to 'Edit', edit_equipement_path(equipement) %>
-            </a>
-            <a href="#" class="btn btn-default" role="button">
-              <%= link_to 'Destroy', equipement, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </a>
-          </p>
-        </div>
-      </div>
-   </div>
-  <% end %>
-</div> 
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  .caption{
+    box-shadow: 10px 10px  #888888; border-radius: 150px; text-align: center;
+  }
+
+  .new{
+    margin-top:10%; text-align: center; 
+  }
+</style>
 
 <div>
-  <%= link_to 'New Equipement', new_equipement_path %>
+  <% @equipements.each do |equipement| %> 
+   <div class="col-md-4">
+     <div class="thumbnail" style="border:none;">
+        <div class="caption">
+          <div>
+            <%= link_to equipement do%>
+              <h3>
+                <%= equipement.name %>
+              </h3>
+              <%= image_tag("foot.png", :alt => "foot") %>
+              <p>
+                <b>Description : </b>
+                ...
+                <!-- <%= equipement.description %> -->
+              </p>
+              <p>
+                Pour le  
+                <b> <%= equipement.sport.name %></b>
+              </p>
+            <% end %>
+          </div>
+          <div style="display:inline; ">
+              <%= button_to "Edit", edit_equipement_path(equipement), :class => "btn btn-warning", :method => :get%>
+              <%= button_to "Destroy", equipement, :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' }%>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
+
