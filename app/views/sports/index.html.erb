@@ -24,7 +24,7 @@
 
 <div>
   <% @sports.each do |sport| %> 
-   <div class="col-md-4">
+   <div class="col-md-3">
      <div class="thumbnail" style="border:none;">
         <div class="caption">
           <div>
@@ -36,13 +36,12 @@
               <p>
                 <b>Description : </b>
                 ...
-                <!-- <%= sport.description %> -->
               </p>
             <% end %>
           </div>
           <div style="display:inline; ">
             <%= button_to "Edit", edit_sport_path(sport), :class => "btn btn-warning", :method => :get%>
-            <%= button_to "Destroy", sport, :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' }%>
+            <%= button_to "Destroy", sport , :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' }%>
           </div>
         </div>
       </div>

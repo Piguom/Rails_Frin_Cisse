@@ -49,7 +49,7 @@
   } 
 
   .add_sport{
-    margin-top: 2%;
+    margin-top: 1%;
     margin-right:15%;
     float:right;
     text-align: right;
@@ -69,14 +69,14 @@
 </nav> 
 
 <div>
-	<div class="container-fluid" style="background-color:#333; height:100%; display:inline-block; float:left; box-shadow: 10px 10px  #888888; ">
+	<div style="background-color:#333; height:100%; display:inline-block; float:left; box-shadow: 10px 10px  #888888; ">
   <h1>StoreSport</h1>
 
 	<hr />
   <div class="nav" style="margin-top:5%">
       <div class="add_sport">
         <%= button_to '+', new_sport_path  , :class => "btn btn-success",:style => "border-radius:20px;",:method => :get%> 
-        <%= button_to '+', new_equipement_path , :class => "btn btn-success",:style => "border-radius:20px;",:method => :get%>
+          <%= button_to '+', new_equipement_path, :class => "btn btn-success",:style => "border-radius:20px;",:method => :get%>
       </div>
       <ul> 
         <li>
@@ -93,21 +93,21 @@
 
 	<form class="form-horizontal">
 	<h5 >Contact us</h5>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+  <div class="form-group" style="width:100%; margin-left:0%">
+    <label class="sr-only"for="exampleInputEmail3">Email address</label>
+    <input type="email" readonly class="form-control" id="exampleInputEmail3" placeholder="Email">
   </div>
-  <textarea class="form-control" rows="3">Your reclamation here</textarea>
+  <textarea class="form-control" readonly rows="3" placeholder="Tu peux toujours essayer, ça ne marche pas :D"></textarea>
   <div class="checkbox">
-    <label>
-      <input type="checkbox"> Accept the <b>General Conditions</b>
+    <label style="color:white; font-size:12px">
+      <input type="checkbox" > Accept the <b>General Conditions</b>
     </label>
   </div>
-  <button type="submit" class="btn btn-default" style="margin-bottom:2%;">Send</button>
+  <button type="submit" class="btn btn-default" style="margin-bottom:2%; margin-left:30%;">Send</button>
 </form>
 
 </div>
-<div style="display:inline-block">
+<div style="display:block">
 	<%= yield %>
 </div>
 </div>
