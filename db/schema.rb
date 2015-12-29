@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210203804) do
+ActiveRecord::Schema.define(version: 20151208205421) do
 
-# Could not dump table "equipements" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "equipements", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sport_id"
+  end
+
+  add_index "equipements", ["sport_id"], name: "index_equipements_on_sport_id"
 
   create_table "models", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,7 +41,11 @@ ActiveRecord::Schema.define(version: 20151210203804) do
   add_index "models", ["email"], name: "index_models_on_email", unique: true
   add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
 
-# Could not dump table "sports" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "sports", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
