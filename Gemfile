@@ -44,3 +44,5 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'devise'
+
+gem 'rails_12factor', group: :production
