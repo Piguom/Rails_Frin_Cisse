@@ -41,7 +41,7 @@ gem 'sass'
 gem 'materialize-sass'
 
 gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', "~>5.1.0"
 
 gem 'devise'
 
