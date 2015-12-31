@@ -46,3 +46,5 @@ gem 'autoprefixer-rails'
 gem 'devise'
 
 gem 'rails_12factor', group: :production
+
+gem 'paperclip'
