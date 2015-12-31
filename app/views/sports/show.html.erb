@@ -10,7 +10,7 @@
           <h3>
             <%= @sport.name %>
           </h3>
-          <%= link_to image_tag(@sport.image_tag.url(:med)), @sport.image_tag.url %>
+          <%= link_to image_tag(@sport.image.url(:med)), @sport.image.url %>
           <%= image_tag("foot.png", :alt => "foot") %>
           <p>
             <b>Description : </b>
