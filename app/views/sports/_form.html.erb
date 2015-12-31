@@ -1,4 +1,4 @@
-<%= form_for(@sport, html: {multipart: true}) do |f| %>
+<%= form_for @sport do |f| %>
   <% if @sport.errors.any? %>
     <div class="form-group" id="error_explanation">
       <h2><%= pluralize(@sport.errors.count, "error") %> prohibited this sport from being saved:</h2>
@@ -16,7 +16,7 @@
     <%= f.text_field :name %>
   </div>
   <div class="field form-group">
-    <%= f.file_field :image_file_name %><br>
+    <%= f.input :image, as: :file %><br>
   </div>
   <div class="field form-group">
     <%= f.label :description %><br>
