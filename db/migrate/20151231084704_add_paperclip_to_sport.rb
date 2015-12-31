@@ -1,5 +1,5 @@
 class AddPaperclipToSport < ActiveRecord::Migration
   def change
-  	add_attachement :sports, :image
+  	add_attachment :sports, :image
   end
 end
